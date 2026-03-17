@@ -18,7 +18,7 @@
 
 <p align="center">
   <a href="https://clawnet0.github.io/">Project Page</a> |
-  <a href="https://discord.gg/jqyvzss2">Discord</a> |
+  <!-- <a href="https://discord.gg/jqyvzss2">Discord</a> | -->
   <a href="#license">License</a>
 </p>
 
