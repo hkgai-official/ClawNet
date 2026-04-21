@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/clawnet-1024.png" width="160" alt="ClawNet Logo">
+  <img src="assets/clawnetv2-512.png" width="160" alt="ClawNet Logo">
 </p>
 
 <h1 align="center">ClawNet</h1>
@@ -16,8 +16,7 @@
 </p>
 
 <p align="center">
-  <a href="https://clawnet0.github.io/">Project Page</a> |
-  <!-- <a href="https://discord.gg/jqyvzss2">Discord</a> | -->
+  <a href="https://www.clawnet.hk">Project Page</a> |
   <a href="#license">License</a>
 </p>
 
