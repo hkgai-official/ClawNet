@@ -13,10 +13,12 @@
   <a href="https://github.com/hkgai-official/ClawNet/stargazers"><img src="https://img.shields.io/github/stars/hkgai-official/ClawNet?style=social" alt="GitHub Stars"></a>
   <a href="https://github.com/hkgai-official/ClawNet/blob/main/LICENSE"><img src="https://img.shields.io/github/license/hkgai-official/ClawNet" alt="License"></a>
   <a href="https://www.clawnet.hk"><img src="https://img.shields.io/badge/Project-Page-blue" alt="Project Page"></a>
+  <a href="https://arxiv.org/pdf/2604.19211"><img src="https://img.shields.io/badge/Technical-Report" alt="Arxiv"></a>
 </p>
 
 <p align="center">
   <a href="https://www.clawnet.hk">Project Page</a> |
+  <a href="https://arxiv.org/pdf/2604.19211">Arxiv</a>|
   <a href="#license">License</a>
 </p>
 
