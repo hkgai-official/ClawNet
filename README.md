@@ -23,7 +23,8 @@
 </p>
 
 ---
-## ClawNet gets accepted by ICML 2026 Workshop on Technical AI Governance Research (TAIGR). See you in Seoul 😃:
+## News
+ClawNet gets accepted by ICML 2026 Workshop on Technical AI Governance Research (TAIGR). See you in Seoul 😃:
 
 ## About
 
