@@ -1,0 +1,12 @@
+{
+  "gatewayUnreachable": "Gateway unreachable",
+  "retry": "Retry",
+  "reconnect": "Reconnect",
+  "generating": "Generating…",
+  "stop": "Stop",
+  "connected": "Connected",
+  "connecting": "Connecting…",
+  "reconnecting": "Reconnecting…",
+  "disconnected": "Disconnected",
+  "disconnectedLost": "Disconnected — connection lost"
+}

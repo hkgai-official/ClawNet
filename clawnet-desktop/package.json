@@ -1,0 +1,181 @@
+{
+  "name": "clawnet",
+  "productName": "ClawNet",
+  "version": "0.18.0",
+  "description": "Cross-platform ClawNet desktop client (Windows, macOS, Linux)",
+  "private": true,
+  "main": "out/main/index.js",
+  "type": "module",
+  "engines": {
+    "node": ">=20.10"
+  },
+  "packageManager": "pnpm@9.12.0",
+  "scripts": {
+    "dev": "electron-vite dev",
+    "build": "electron-vite build",
+    "build:win": "pnpm build && electron-builder --win --publish never",
+    "build:mac": "pnpm build && electron-builder --mac --publish never",
+    "build:linux": "pnpm build && electron-builder --linux --publish never",
+    "preview": "electron-vite preview",
+    "typecheck": "tsc -b --pretty",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write \"**/*.{ts,tsx,js,cjs,mjs,json,md,css}\"",
+    "format:check": "prettier --check \"**/*.{ts,tsx,js,cjs,mjs,json,md,css}\"",
+    "rebuild:electron": "electron-rebuild -f -w better-sqlite3",
+    "rebuild:node": "pnpm rebuild better-sqlite3",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:cov": "vitest run --coverage",
+    "test:e2e": "playwright test",
+    "test:e2e:headed": "playwright test --headed",
+    "test:e2e:debug": "PWDEBUG=1 playwright test",
+    "test:e2e:report": "playwright show-report"
+  },
+  "build": {
+    "appId": "ai.clawnet.desktop",
+    "productName": "ClawNet",
+    "copyright": "Copyright © 2026 ClawNet",
+    "publish": {
+      "provider": "github",
+      "owner": "hkgai-official",
+      "repo": "ClawNet"
+    },
+    "directories": {
+      "output": "build/dist"
+    },
+    "files": [
+      "out/main/**/*",
+      "out/preload/**/*",
+      "out/renderer/**/*",
+      "package.json"
+    ],
+    "asar": true,
+    "asarUnpack": [
+      "**/*.node"
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "nsis"
+        },
+        {
+          "target": "portable"
+        }
+      ],
+      "icon": "resources/clawnetv2-icon/clawnetv2.ico",
+      "artifactName": "ClawNet-Setup-${version}-${arch}.${ext}"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": "always",
+      "shortcutName": "ClawNet",
+      "deleteAppDataOnUninstall": false
+    },
+    "portable": {
+      "artifactName": "ClawNet-Portable-${version}-${arch}.${ext}"
+    },
+    "mac": {
+      "category": "public.app-category.social-networking",
+      "target": [
+        { "target": "dmg" },
+        { "target": "zip" }
+      ],
+      "icon": "resources/clawnetv2-icon/clawnetv2.icns",
+      "artifactName": "ClawNet-${version}-${arch}.${ext}",
+      "hardenedRuntime": false,
+      "gatekeeperAssess": false
+    },
+    "dmg": {
+      "title": "ClawNet ${version}"
+    },
+    "linux": {
+      "category": "Network",
+      "target": [
+        { "target": "AppImage" },
+        { "target": "deb" }
+      ],
+      "icon": "resources/clawnetv2-icon/clawnetv2-1024.png",
+      "artifactName": "ClawNet-${version}-${arch}.${ext}",
+      "maintainer": "ClawNet <noreply@clawnet.hk>"
+    }
+  },
+  "dependencies": {
+    "@radix-ui/react-collapsible": "^1.1.1",
+    "@radix-ui/react-separator": "^1.1.0",
+    "@radix-ui/react-slot": "^1.1.0",
+    "@radix-ui/react-tooltip": "^1.1.4",
+    "@tanstack/react-query": "5.59.20",
+    "@tanstack/react-virtual": "^3.13.24",
+    "better-sqlite3": "^12.10.0",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.1",
+    "electron-log": "5.2.4",
+    "electron-store": "10.0.0",
+    "electron-updater": "^6.8.3",
+    "highlight.js": "^11.0.0",
+    "i18next": "23.16.0",
+    "jose": "5.9.6",
+    "lucide-react": "0.460.0",
+    "mammoth": "1.12.0",
+    "node-html-parser": "7.1.0",
+    "pdf-parse": "2.4.5",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "react-i18next": "14.1.0",
+    "react-markdown": "9.0.3",
+    "react-resizable-panels": "^2.1.7",
+    "rehype-highlight": "^7.0.0",
+    "remark-gfm": "4.0.0",
+    "rtf-parser": "1.3.3",
+    "tailwind-merge": "^2.5.5",
+    "word-extractor": "1.0.4",
+    "ws": "8.18.0",
+    "zod": "3.24.0",
+    "zustand": "5.0.1"
+  },
+  "pnpm": {
+    "overrides": {
+      "happy-dom": "20.0.0"
+    }
+  },
+  "devDependencies": {
+    "@electron/rebuild": "^4.0.4",
+    "@playwright/test": "1.49.1",
+    "@tailwindcss/postcss": "4.3.0",
+    "@testing-library/dom": "^10.0.0",
+    "@testing-library/react": "16.0.1",
+    "@types/better-sqlite3": "^7.6.13",
+    "@types/express": "5.0.0",
+    "@types/node": "20.16.0",
+    "@types/react": "18.3.10",
+    "@types/react-dom": "18.3.0",
+    "@types/ws": "8.5.13",
+    "@typescript-eslint/eslint-plugin": "8.7.0",
+    "@typescript-eslint/parser": "8.7.0",
+    "@vitejs/plugin-react": "4.3.2",
+    "@vitest/coverage-v8": "2.1.9",
+    "electron": "40.8.5",
+    "electron-builder": "25.1.0",
+    "electron-vite": "3.0.0",
+    "eslint": "9.12.0",
+    "eslint-plugin-react": "7.37.0",
+    "eslint-plugin-react-hooks": "5.0.0",
+    "express": "4.21.2",
+    "globals": "15.10.0",
+    "jsdom": "25.0.0",
+    "msw": "2.6.0",
+    "postcss": "8.4.47",
+    "prettier": "3.3.0",
+    "socks": "^2.8.9",
+    "socks-proxy-agent": "^10.0.0",
+    "tailwindcss": "4.3.0",
+    "typescript": "5.6.3",
+    "typescript-eslint": "8.7.0",
+    "undici": "^8.2.0",
+    "vite": "5.4.0",
+    "vitest": "2.1.9"
+  }
+}

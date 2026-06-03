@@ -1,0 +1,12 @@
+{
+  "appName": "ClawNet",
+  "loading": "加载中...",
+  "ok": "确定",
+  "cancel": "取消",
+  "loginAccount": "账号",
+  "loginTitle": "登录你的账户",
+  "loginServerURL": "服务器地址",
+  "loginPassword": "密码",
+  "loginButton": "登录",
+  "loginInvalidServerURL": "无效的服务器地址"
+}

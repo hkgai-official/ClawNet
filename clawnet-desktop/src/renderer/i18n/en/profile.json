@@ -1,0 +1,23 @@
+{
+  "title": "Profile",
+  "avatar": "Avatar",
+  "basicInfo": "Basic Info",
+  "user": "User",
+  "userCodeLabel": "ID",
+  "emailLabel": "Email",
+  "nameLabel": "Name",
+  "security": "Security",
+  "changePassword": "Change Password",
+  "saveChanges": "Save Changes",
+  "saving": "Saving…",
+  "saved": "Saved",
+  "saveFailed": "Failed to save",
+  "currentPassword": "Current password",
+  "newPasswordPlaceholder": "New password (min 6 characters)",
+  "confirmNewPassword": "Confirm new password",
+  "passwordMismatch": "New password and confirmation do not match",
+  "passwordSameAsOld": "New password cannot be the same as the current one",
+  "passwordChanged": "Password changed",
+  "confirmChanges": "Confirm",
+  "cancel": "Cancel"
+}

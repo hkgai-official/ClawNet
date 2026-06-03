@@ -1,0 +1,109 @@
+:root {
+  --color-brand-50:  #eef2ff;
+  --color-brand-500: #5468ff;
+  --color-brand-600: #3d4fd6;
+  --color-brand-700: #2d3aa3;
+
+  --color-bg-app:        #fafafa;
+  --color-bg-surface:    #ffffff;
+  --color-bg-surface-2:  #f4f4f5;
+  --color-bg-overlay:    rgba(0,0,0,0.04);
+  --color-border-subtle: #e4e4e7;
+  --color-border-strong: #d4d4d8;
+  --color-text-primary:  #18181b;
+  --color-text-secondary:#52525b;
+  --color-text-muted:    #a1a1aa;
+
+  --color-success: #22c55e;
+  --color-warning: #f59e0b;
+  --color-danger:  #ef4444;
+  --color-info:    #0ea5e9;
+  --color-on-status: #ffffff;
+
+  /* Tinted card backgrounds + borders for rich-card variants (P2B).
+   * The status colors above are mid-saturation; these are 4–18 % tints used
+   * as card surfaces / accent borders. Hex form (not rgba) keeps the
+   * lint rule satisfied and centralizes the palette here. */
+  --color-info-bg-subtle:     #f0f9ff;
+  --color-info-border-subtle: #bae6fd;
+  --color-info-badge-bg:      #e0f2fe;
+
+  --color-success-bg-subtle:     #f0fdf4;
+  --color-success-border-subtle: #bbf7d0;
+  --color-success-badge-bg:      #dcfce7;
+
+  --color-warning-bg-subtle:     #fffbeb;
+  --color-warning-border-subtle: #fde68a;
+  --color-warning-badge-bg:      #fef3c7;
+
+  --color-danger-bg-subtle:     #fef2f2;
+  --color-danger-border-subtle: #fecaca;
+  --color-danger-badge-bg:      #fee2e2;
+
+  /* Agent-to-agent dialog accent (purple). */
+  --color-purple:            #a855f7;
+  --color-purple-bg-subtle:  #faf5ff;
+  --color-purple-badge-bg:   #f3e8ff;
+
+  /* Lightbox / modal scrim — solid color so dark-mode flip works without
+   * rgba in component code. */
+  --color-scrim:        #000000d9;
+  --color-scrim-control: #ffffff1a;
+
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+
+  --shadow-sm: 0 1px 2px rgba(0,0,0,.04);
+  --shadow-md: 0 4px 12px rgba(0,0,0,.06);
+  --shadow-lg: 0 12px 32px rgba(0,0,0,.10);
+
+  --font-sans: "Inter", "Segoe UI Variable", "Microsoft YaHei UI", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", "Cascadia Code", Consolas, "Courier New", monospace;
+
+  --duration-fast: 120ms;
+  --duration-base: 200ms;
+  --duration-slow: 320ms;
+  --ease-standard: cubic-bezier(.2,0,0,1);
+
+  --titlebar-height: 36px;
+  --sidebar-width:   260px;
+
+  --ring-color: var(--color-brand-500);
+}
+
+[data-theme="dark"] {
+  --color-bg-app:        #0a0a0b;
+  --color-bg-surface:    #131316;
+  --color-bg-surface-2:  #1c1c20;
+  --color-bg-overlay:    rgba(255,255,255,0.04);
+  --color-border-subtle: #27272a;
+  --color-border-strong: #3f3f46;
+  --color-text-primary:  #fafafa;
+  --color-text-secondary:#a1a1aa;
+  --color-text-muted:    #71717a;
+  --color-on-status: #ffffff;
+
+  /* Dark-mode rich-card surfaces: dim the tints so they don't glow on
+   * dark backgrounds. */
+  --color-info-bg-subtle:     #0c2237;
+  --color-info-border-subtle: #1e3a5f;
+  --color-info-badge-bg:      #143055;
+
+  --color-success-bg-subtle:     #0f2a18;
+  --color-success-border-subtle: #1c4a2c;
+  --color-success-badge-bg:      #143822;
+
+  --color-warning-bg-subtle:     #2a1f08;
+  --color-warning-border-subtle: #4a3917;
+  --color-warning-badge-bg:      #3a2c10;
+
+  --color-danger-bg-subtle:     #2a1414;
+  --color-danger-border-subtle: #4a2222;
+  --color-danger-badge-bg:      #3a1c1c;
+
+  --color-purple:            #c084fc;
+  --color-purple-bg-subtle:  #1f1430;
+  --color-purple-badge-bg:   #2c1f4a;
+}

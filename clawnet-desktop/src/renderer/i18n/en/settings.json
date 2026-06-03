@@ -1,0 +1,80 @@
+{
+  "title": "Settings",
+  "theme": "Theme",
+  "themeOptions": {
+    "system": "Follow system",
+    "light": "Light",
+    "dark": "Dark"
+  },
+  "language": "Language",
+  "languageOptions": {
+    "en": "English",
+    "zh-Hans": "简体中文",
+    "zh-Hant": "繁體中文"
+  },
+  "fileAccess": {
+    "title": "File Access",
+    "mode": "Mode",
+    "modeDeny": "Deny all",
+    "modeScoped": "Scoped",
+    "modeFull": "Full access",
+    "allowedPaths": "Allowed paths",
+    "deniedPaths": "Denied paths",
+    "addPath": "Add path",
+    "browse": "Browse...",
+    "remove": "Remove",
+    "save": "Save changes",
+    "noFoldersAuthorized": "No folders authorized yet.",
+    "noDeniedPaths": "No denied paths configured.",
+    "defaultLabel": "default"
+  },
+  "consent": {
+    "title": "Agent wants to access:",
+    "allowOnce": "Allow once",
+    "allowAlways": "Allow always",
+    "deny": "Deny"
+  },
+  "general": {
+    "title": "General",
+    "language": "Language"
+  },
+  "about": {
+    "title": "About",
+    "version": "Version",
+    "app": "Application",
+    "appName": "ClawNet"
+  },
+  "sidebar": {
+    "settings": "Settings",
+    "profile": "Profile",
+    "general": "General",
+    "connection": "Connection",
+    "security": "Security",
+    "tags": "Tags",
+    "logout": "Log out",
+    "connected": "Connected",
+    "connecting": "Connecting",
+    "reconnecting": "Reconnecting",
+    "disconnected": "Disconnected"
+  },
+  "connection": {
+    "title": "Gateway connection",
+    "serverAddress": "Server address",
+    "applyAndReconnect": "Apply & Reconnect",
+    "applying": "Applying…",
+    "reconnectNow": "Reconnect now",
+    "reconnecting": "Reconnecting to new server…",
+    "revert": "Revert",
+    "invalidURLFormat": "URL must start with http:// or https://"
+  },
+  "nav": {
+    "chat": "Chat",
+    "contacts": "Contacts",
+    "settings": "Settings",
+    "signOut": "Sign out"
+  },
+  "workspace": {
+    "personal": "Personal",
+    "subtitle": "Workspace"
+  }
+}

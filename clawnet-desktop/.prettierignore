@@ -1,0 +1,11 @@
+node_modules
+out
+build
+dist
+pnpm-lock.yaml
+*.lock
+.git
+resources
+playwright-report/
+test-results/
+e2e/__screenshots__/

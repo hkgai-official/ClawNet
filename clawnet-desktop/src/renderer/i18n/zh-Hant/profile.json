@@ -1,0 +1,23 @@
+{
+  "title": "個人信息",
+  "avatar": "头像",
+  "basicInfo": "基本信息",
+  "user": "用戶",
+  "userCodeLabel": "ID",
+  "emailLabel": "邮箱",
+  "nameLabel": "昵称",
+  "security": "安全",
+  "changePassword": "修改密碼",
+  "saveChanges": "保存修改",
+  "saving": "保存中…",
+  "saved": "已保存",
+  "saveFailed": "保存失败",
+  "currentPassword": "当前密碼",
+  "newPasswordPlaceholder": "新密碼(至少 6 位)",
+  "confirmNewPassword": "确認新密碼",
+  "passwordMismatch": "两次輸入的新密碼不一致",
+  "passwordSameAsOld": "新密碼不能与当前密碼相同",
+  "passwordChanged": "密碼已修改",
+  "confirmChanges": "确認修改",
+  "cancel": "取消"
+}

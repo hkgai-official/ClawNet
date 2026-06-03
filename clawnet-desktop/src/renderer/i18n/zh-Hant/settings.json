@@ -1,0 +1,80 @@
+{
+  "title": "設置",
+  "theme": "主題",
+  "themeOptions": {
+    "system": "跟隨系統",
+    "light": "淺色",
+    "dark": "深色"
+  },
+  "language": "語言",
+  "languageOptions": {
+    "en": "English",
+    "zh-Hans": "簡體中文",
+    "zh-Hant": "繁體中文"
+  },
+  "fileAccess": {
+    "title": "文件訪問",
+    "mode": "模式",
+    "modeDeny": "禁止訪問",
+    "modeScoped": "限定範圍",
+    "modeFull": "完全訪問",
+    "allowedPaths": "允許路徑",
+    "deniedPaths": "拒絕路徑",
+    "addPath": "添加路徑",
+    "browse": "瀏覽...",
+    "remove": "移除",
+    "save": "保存更改",
+    "noFoldersAuthorized": "暫未授權任何文件夾。",
+    "noDeniedPaths": "未配置拒絕路徑。",
+    "defaultLabel": "默認"
+  },
+  "consent": {
+    "title": "Agent 想訪問:",
+    "allowOnce": "允許一次",
+    "allowAlways": "始終允許",
+    "deny": "拒絕"
+  },
+  "general": {
+    "title": "通用",
+    "language": "語言"
+  },
+  "about": {
+    "title": "關於",
+    "version": "版本",
+    "app": "應用",
+    "appName": "ClawNet"
+  },
+  "sidebar": {
+    "settings": "設置",
+    "profile": "個人信息",
+    "general": "通用",
+    "connection": "連接",
+    "security": "安全",
+    "tags": "標籤",
+    "logout": "退出登錄",
+    "connected": "已連接",
+    "connecting": "連接中",
+    "reconnecting": "重新連接",
+    "disconnected": "已斷開"
+  },
+  "connection": {
+    "title": "網關連接",
+    "serverAddress": "伺服器地址",
+    "applyAndReconnect": "應用並重連",
+    "applying": "應用中…",
+    "reconnectNow": "立即重連",
+    "reconnecting": "正在重連到新伺服器…",
+    "revert": "撤銷",
+    "invalidURLFormat": "URL 必須以 http:// 或 https:// 開頭"
+  },
+  "nav": {
+    "chat": "聊天",
+    "contacts": "聯絡人",
+    "settings": "設置",
+    "signOut": "退出登入"
+  },
+  "workspace": {
+    "personal": "個人",
+    "subtitle": "工作區"
+  }
+}

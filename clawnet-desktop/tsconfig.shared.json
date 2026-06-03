@@ -1,0 +1,9 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "outDir": "out/types/shared",
+    "rootDir": "src/shared",
+    "types": []
+  },
+  "include": ["src/shared/**/*"]
+}

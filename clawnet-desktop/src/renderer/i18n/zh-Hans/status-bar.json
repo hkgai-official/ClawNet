@@ -1,0 +1,12 @@
+{
+  "gatewayUnreachable": "网关无法访问",
+  "retry": "重试",
+  "reconnect": "重新连接",
+  "generating": "生成中…",
+  "stop": "停止",
+  "connected": "已连接",
+  "connecting": "连接中…",
+  "reconnecting": "重新连接中…",
+  "disconnected": "已断开",
+  "disconnectedLost": "已断开 — 连接已丢失"
+}

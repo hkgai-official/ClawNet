@@ -1,0 +1,11 @@
+{
+  "title": "应用更新",
+  "checkForUpdates": "检查更新",
+  "checking": "检查中…",
+  "upToDate": "已是最新版本",
+  "available": "发现新版本: {{version}}",
+  "downloading": "正在下载 {{version}}…({{percent}}%)",
+  "downloaded": "{{version}} 已就绪 — 重启即可安装",
+  "errorTitle": "检查更新失败",
+  "restart": "重启并安装"
+}

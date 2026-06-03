@@ -1,0 +1,13 @@
+{
+  "title": "搜索",
+  "placeholder": "搜索消息、聯系人、文件…",
+  "messages": "消息",
+  "contacts": "聯系人",
+  "files": "文件",
+  "noResults": "没有 \"{{query}}\" 的结果",
+  "startTyping": "開始輸入以搜索",
+  "loading": "搜索中…",
+  "errorOccurred": "搜索失败，請重試。",
+  "close": "關閉",
+  "resultsCount": "{{count}} 条结果"
+}

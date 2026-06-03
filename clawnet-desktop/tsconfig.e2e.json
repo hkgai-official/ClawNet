@@ -1,0 +1,12 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "outDir": "out/types/e2e",
+    "noEmit": true,
+    "types": ["node"],
+    "lib": ["ES2022", "DOM"],
+    "module": "ESNext",
+    "moduleResolution": "Bundler"
+  },
+  "include": ["e2e/**/*.ts", "playwright.config.ts"]
+}

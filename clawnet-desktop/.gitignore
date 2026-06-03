@@ -1,0 +1,56 @@
+# Dependencies
+node_modules/
+.pnp/
+.pnp.js
+
+# Build artifacts
+dist/
+build/
+out/
+*.tsbuildinfo
+
+# Local env
+.env
+.env.local
+.env.*
+.env.*.local
+!.env.example
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Test/coverage
+coverage/
+.nyc_output/
+playwright-report/
+test-results/
+e2e/__screenshots__/
+artifacts/
+
+# Editor
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json.example
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Electron
+release/
+app.asar
+*.exe
+*.dmg
+*.deb
+*.AppImage
+
+# Native modules rebuild artifacts
+prebuilds/

@@ -1,0 +1,12 @@
+{
+  "appName": "ClawNet",
+  "loading": "Loading...",
+  "ok": "OK",
+  "cancel": "Cancel",
+  "loginAccount": "Account",
+  "loginTitle": "Sign in to your account",
+  "loginServerURL": "Server URL",
+  "loginPassword": "Password",
+  "loginButton": "Sign In",
+  "loginInvalidServerURL": "Invalid server URL"
+}

@@ -1,0 +1,63 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  quality:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22.10
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm typecheck
+      - run: pnpm lint
+      - run: pnpm test --reporter=verbose
+
+  e2e:
+    runs-on: ubuntu-22.04
+    needs: quality
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22.10
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm exec playwright install --with-deps chromium
+      - name: Rebuild native modules for Electron
+        # better-sqlite3 needs Electron ABI for the packaged main process;
+        # `pnpm install` only fetched the Node prebuild.
+        run: pnpm exec electron-rebuild -f -w better-sqlite3
+      - run: pnpm build
+      - name: Run e2e
+        run: xvfb-run --auto-servernum pnpm test:e2e
+      - uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: playwright-report
+          path: playwright-report/
+
+  build-win:
+    runs-on: windows-2022
+    needs: quality
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22.10
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm build:win
+      - uses: actions/upload-artifact@v4
+        with:
+          name: clawnet-desktop-installer
+          path: build/dist/*.exe

@@ -1,0 +1,28 @@
+{
+  "title": "Security Events",
+  "navLabel": "Security",
+  "search": "Search events…",
+  "categories": {
+    "all": "All",
+    "boundary_violation": "Boundary Violation",
+    "access_denied": "Access Denied",
+    "dialog_approval": "Dialog Approval",
+    "approval": "Approval Request",
+    "other": "Other"
+  },
+  "markAllRead": "Mark all read",
+  "emptyTitle": "No security events yet",
+  "emptyDescription": "Audit events will appear here as agents act on your system.",
+  "noMatchTitle": "No matching events",
+  "noMatchDescription": "Adjust the filter or clear the search.",
+  "detailLabel": "Detail:",
+  "unknownPath": "(unknown path)",
+  "unknownTag": "(unknown tag)",
+  "events": {
+    "boundary_violation": "Tag {{tag}} agent {{agent}} attempted {{violationType}} access to {{path}}",
+    "access_denied": "Agent {{agent}} {{command}} denied for {{path}}",
+    "dialog_approval_request": "{{owner}} requested {{agent}} to discuss: {{topic}}",
+    "approval_requested": "Agent {{agent}} requested approval",
+    "fallback": "{{agent}}: {{eventType}}"
+  }
+}

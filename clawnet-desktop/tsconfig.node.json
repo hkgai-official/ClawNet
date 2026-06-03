@@ -1,0 +1,18 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "outDir": "out/types/node",
+    "noEmit": true,
+    "types": ["node"],
+    "module": "ESNext",
+    "moduleResolution": "Bundler"
+  },
+  "include": [
+    "electron.vite.config.ts",
+    "vitest.config.ts",
+    "vitest.setup.ts",
+    "postcss.config.js",
+    "eslint.config.js",
+    "eslint-rules/**/*"
+  ]
+}

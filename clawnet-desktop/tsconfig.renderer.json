@@ -1,0 +1,12 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "outDir": "out/types/renderer",
+    "rootDir": "src",
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "jsx": "react-jsx",
+    "types": ["vite/client"]
+  },
+  "include": ["src/renderer/**/*", "src/renderer/**/*.json", "src/shared/**/*"],
+  "references": [{ "path": "./tsconfig.shared.json" }]
+}

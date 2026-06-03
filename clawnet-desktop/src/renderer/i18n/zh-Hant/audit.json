@@ -1,0 +1,28 @@
+{
+  "title": "安全事件",
+  "navLabel": "安全",
+  "search": "搜索事件…",
+  "categories": {
+    "all": "全部",
+    "boundary_violation": "越界訪問",
+    "access_denied": "訪問拒絕",
+    "dialog_approval": "对話审批",
+    "approval": "授權請求",
+    "other": "其他"
+  },
+  "markAllRead": "全部已读",
+  "emptyTitle": "暂无安全事件",
+  "emptyDescription": "Agent 在系統上的操作會作为审计事件顯示在这里。",
+  "noMatchTitle": "未匹配到事件",
+  "noMatchDescription": "調整筛選条件或清除搜索词。",
+  "detailLabel": "詳情:",
+  "unknownPath": "(未知路徑)",
+  "unknownTag": "(未知標籤)",
+  "events": {
+    "boundary_violation": "{{tag}} 標籤的 {{agent}} 嘗試以 {{violationType}} 方式訪問 {{path}}",
+    "access_denied": "{{agent}} 的 {{command}} 操作被拒(路徑: {{path}})",
+    "dialog_approval_request": "{{owner}} 請求与 {{agent}} 讨論: {{topic}}",
+    "approval_requested": "{{agent}} 申請授權",
+    "fallback": "{{agent}}: {{eventType}}"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "title": "Search",
+  "placeholder": "Search messages, contacts, files…",
+  "messages": "Messages",
+  "contacts": "Contacts",
+  "files": "Files",
+  "noResults": "No results for \"{{query}}\"",
+  "startTyping": "Start typing to search",
+  "loading": "Searching…",
+  "errorOccurred": "Search failed. Try again.",
+  "close": "Close",
+  "resultsCount": "{{count}} results",
+  "resultsCount_one": "{{count}} result"
+}
