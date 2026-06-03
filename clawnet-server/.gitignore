@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Virtual environment
+.venv/
+venv/
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# Runtime
+data/
+uploads/
+*.log
+gateway_users.json
+.openclaw_ws_identity.json
+
+# Editor
+.vscode/
+.idea/
+.DS_Store
+*.sw?
+
+# Test
+.pytest_cache/
+.coverage
+htmlcov/

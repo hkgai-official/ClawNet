@@ -1,0 +1,85 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: ${COMPOSE_PROJECT_NAME:-clawnet}-postgres
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-clawnet}
+      POSTGRES_USER: ${POSTGRES_USER:-clawnet}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-clawnet}
+    ports:
+      - "${POSTGRES_PORT:-5432}:5432"
+    volumes:
+      - ${POSTGRES_DATA_DIR:-./data/postgres}:/var/lib/postgresql/data
+      - ./migrations/001_initial.sql:/docker-entrypoint-initdb.d/001_initial.sql
+      - ./migrations/002_agent_dialog.sql:/docker-entrypoint-initdb.d/002_agent_dialog.sql
+      - ./migrations/003_soft_delete_conversation.sql:/docker-entrypoint-initdb.d/003_soft_delete_conversation.sql
+      - ./migrations/004_message_soft_delete.sql:/docker-entrypoint-initdb.d/004_message_soft_delete.sql
+      - ./migrations/005_friend_request.sql:/docker-entrypoint-initdb.d/005_friend_request.sql
+      - ./migrations/006_dialog_session_version.sql:/docker-entrypoint-initdb.d/006_dialog_session_version.sql
+      - ./migrations/007_discovery_task.sql:/docker-entrypoint-initdb.d/007_discovery_task.sql
+      - ./migrations/008_add_nested_dialog_reason.sql:/docker-entrypoint-initdb.d/008_add_nested_dialog_reason.sql
+      - ./migrations/009_tags.sql:/docker-entrypoint-initdb.d/009_tags.sql
+      - ./migrations/010_agent_tag_role.sql:/docker-entrypoint-initdb.d/010_agent_tag_role.sql
+      - ./migrations/011_group_roles.sql:/docker-entrypoint-initdb.d/011_group_roles.sql
+      - ./migrations/012_main_agent.sql:/docker-entrypoint-initdb.d/012_main_agent.sql
+      - ./migrations/012_user_gateway.sql:/docker-entrypoint-initdb.d/012_user_gateway.sql
+      - ./migrations/013_split_default_main.sql:/docker-entrypoint-initdb.d/013_split_default_main.sql
+      - ./migrations/014_cascade_delete_users.sql:/docker-entrypoint-initdb.d/014_cascade_delete_users.sql
+      - ./migrations/015_user_code.sql:/docker-entrypoint-initdb.d/015_user_code.sql
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-clawnet}"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  redis:
+    image: redis:7-alpine
+    container_name: ${COMPOSE_PROJECT_NAME:-clawnet}-redis
+    ports:
+      - "${REDIS_PORT:-6379}:6379"
+    volumes:
+      - ${REDIS_DATA_DIR:-./data/redis}:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        BACKEND_PORT: ${BACKEND_PORT:-9000}
+    container_name: ${COMPOSE_PROJECT_NAME:-clawnet}-backend
+    ports:
+      - "${BACKEND_PORT:-9000}:${BACKEND_PORT:-9000}"
+    environment:
+      PORT: ${BACKEND_PORT:-9000}
+      DATABASE_URL: postgresql+asyncpg://${POSTGRES_USER:-clawnet}:${POSTGRES_PASSWORD:-clawnet}@postgres:5432/${POSTGRES_DB:-clawnet}
+      REDIS_URL: redis://redis:6379/0
+      JWT_SECRET_KEY: ${JWT_SECRET_KEY:-clawnet-secret-key-change-in-production}
+      CORS_ORIGINS: '["*"]'
+      DEBUG: ${DEBUG:-true}
+      OPENCLAW_CLIENT_ID: ${OPENCLAW_CLIENT_ID:-openclaw-control-ui}
+      INTERNAL_API_KEY: ${INTERNAL_API_KEY:-clawnet-internal-key-change-in-production}
+      SERVER_EXTERNAL_URL: ${SERVER_EXTERNAL_URL:-}
+      WORKSPACES_ROOT: /data/workspaces
+      WORKSPACES_HOST_PATH: ${WORKSPACES_ROOT:-../workspaces}
+      GATEWAY_ENV: ${GATEWAY_ENV:-v1}
+      OPENCLAW_IMAGE_PATTERN: ${OPENCLAW_IMAGE_PATTERN:-openclaw-{env}:local}
+      PROVISION_UID: ${FIX_UID:-1001}
+      PROVISION_GID: ${FIX_GID:-1001}
+      SERPAPI_API_KEY: ${SERPAPI_API_KEY:-}
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    volumes:
+      - ${UPLOAD_DATA_DIR:-./data/uploads}:/app/uploads
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ${WORKSPACES_ROOT:-../workspaces}:/data/workspaces
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+

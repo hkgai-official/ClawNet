@@ -1,0 +1,101 @@
+{
+  "meta": {
+    "lastTouchedVersion": "2026.2.6-3",
+    "lastTouchedAt": "2026-02-14T12:06:20.746Z"
+  },
+  "wizard": {
+    "lastRunAt": "2026-02-11T03:19:08.147Z",
+    "lastRunVersion": "2026.2.6-3",
+    "lastRunCommand": "onboard",
+    "lastRunMode": "local"
+  },
+  "models": {
+    "providers": {
+      "hkgai": {
+        "baseUrl": "https://your-llm-endpoint/v1",
+        "apiKey": "xxx",
+        "auth": "token",
+        "api": "openai-completions",
+        "models": [
+          {
+            "id": "DS3.2",
+            "name": "DS3.2",
+            "input": [
+              "text"
+            ],
+            "contextWindow": 130000,
+            "maxTokens": 8192
+          }
+        ]
+      }
+    }
+  },
+  "agents": {
+    "defaults": {
+      "model": {
+        "primary": "hkgai/DS3.2",
+        "fallbacks": [
+          "hkgai/DS3.2"
+        ]
+      },
+      "models": {
+        "hkgai/DS3.2": {}
+      },
+      "workspace": "/home/node/.openclaw/workspace",
+      "maxConcurrent": 4,
+      "subagents": {
+        "maxConcurrent": 8
+      }
+    }
+  },
+  "messages": {
+    "ackReactionScope": "group-mentions"
+  },
+  "commands": {
+    "native": "auto",
+    "nativeSkills": "auto"
+  },
+  "hooks": {
+    "internal": {
+      "enabled": true,
+      "entries": {
+        "boot-md": {
+          "enabled": true
+        },
+        "command-logger": {
+          "enabled": true
+        },
+        "session-memory": {
+          "enabled": true
+        }
+      }
+    }
+  },
+  "gateway": {
+    "port": 18789,
+    "mode": "local",
+    "bind": "lan",
+    "controlUi": {
+      "dangerouslyDisableDeviceAuth": true,
+      "dangerouslyAllowHostHeaderOriginFallback": true
+    },
+    "auth": {
+      "mode": "token",
+      "token": "REPLACE_WITH_GATEWAY_TOKEN"
+    },
+    "tailscale": {
+      "mode": "off",
+      "resetOnExit": false
+    },
+    "nodes": {
+      "denyCommands": [
+        "camera.snap",
+        "camera.clip",
+        "screen.record",
+        "calendar.add",
+        "contacts.add",
+        "reminders.add"
+      ]
+    }
+  }
+}

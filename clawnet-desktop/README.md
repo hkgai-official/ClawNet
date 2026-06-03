@@ -9,7 +9,7 @@ Cross-platform ClawNet desktop client for **Windows, macOS, and Linux** (x64 / A
 - Node.js 20.10+
 - pnpm 9.x (`corepack enable && corepack prepare pnpm@9 --activate`)
 - Runtime targets: Windows 10 1809+ / 11, macOS 12+, modern Linux — x64 and ARM64
-- You can develop on any of the three OSes. Building an installer for a given OS generally needs that OS (or CI); cross-building to Windows from macOS/Linux additionally needs `wine`.
+- You can develop on any of the three OSes. Packaging an installer for a target OS generally requires that OS (or CI); cross-building to Windows from macOS/Linux additionally needs `wine`.
 
 ## Develop
 
@@ -28,12 +28,24 @@ pnpm test:cov
 pnpm test:e2e       # 5 Playwright e2e flows against an in-process fake server
 ```
 
-The e2e suite boots the packaged Electron app against a fake ClawNet
-server (Express + ws). Each spec spawns its own server + fresh tmp
-`userData` dir. First-run requires `pnpm exec playwright install chromium`
-(~150 MB cache).
+The e2e suite boots the packaged Electron app against an in-process fake ClawNet server (Express + ws); each spec spawns its own server and a fresh temporary `userData` directory, so specs are fully isolated. First-time runs require `pnpm exec playwright install chromium` (~150 MB cache).
 
 ## Build installers
+
+### Recommended: `build.sh` (clean release build)
+
+For any real release build, use the one-shot helper script at the repo root. It (1) wipes both `build/` and `out/` so electron-builder doesn't re-package stale artefacts, (2) rebuilds `better-sqlite3` against the **Electron ABI** (otherwise the app crashes at startup with a native-module mismatch), and (3) runs the full `electron-vite build` + `electron-builder` pipeline.
+
+```bash
+bash build.sh mac           # macOS arm64 (Apple Silicon) — default
+bash build.sh mac x64       # macOS Intel
+bash build.sh win           # Windows x64 — default
+bash build.sh win ia32      # Windows 32-bit (rarely needed)
+```
+
+### Quick / Linux builds: pnpm scripts
+
+For fast incremental rebuilds, or to package the Linux target (not covered by `build.sh`), call the pnpm scripts directly. These skip the `out/` cleanup and the Electron-ABI native rebuild, so only use them when you know the previous build's artefacts and native modules are already in a good state:
 
 ```bash
 pnpm build:win      # Windows: NSIS installer + portable .exe
@@ -41,7 +53,7 @@ pnpm build:mac      # macOS: .dmg / .zip
 pnpm build:linux    # Linux: AppImage / .deb
 ```
 
-Output goes to `build/dist/`. Build each target on (or for) its own OS; see [start.md](start.md) for cross-building notes.
+All installers land in `build/dist/`. Build each target on (or for) its own OS; see [start.md](start.md) for cross-building notes.
 
 ## Project layout
 

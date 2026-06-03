@@ -1,0 +1,7 @@
+.env.*
+docker-compose.extra.yml
+.env
+~/.clawnet-admin-token
+# 运行时按用户生成的 workspaces (只保留模板)
+/workspaces/ws-*/
+!/workspaces/ws-0-template/

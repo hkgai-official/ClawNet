@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>en</string>
+	<key>CFBundleExecutable</key>
+	<string>OpenClawNode</string>
+	<key>CFBundleIdentifier</key>
+	<string>ai.openclaw.node</string>
+	<key>CFBundleInfoDictionaryKey</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>OpenClaw Node</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>2026.2.25</string>
+	<key>CFBundleVersion</key>
+	<string>202602250</string>
+	<key>LSMinimumSystemVersion</key>
+	<string>15.0</string>
+	<key>LSUIElement</key>
+	<true/>
+	<key>NSCameraUsageDescription</key>
+	<string>OpenClaw Node uses the camera for visual capture when requested by the agent.</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>OpenClaw Node uses the microphone for audio capture when requested by the agent.</string>
+	<key>NSScreenCaptureDescription</key>
+	<string>OpenClaw Node captures screen content when the agent requests screenshots.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>OpenClaw Node provides location when requested by the agent.</string>
+	<key>NSAppleEventsUsageDescription</key>
+	<string>OpenClaw Node uses AppleScript to automate tasks for the agent.</string>
+	<key>NSUserNotificationUsageDescription</key>
+	<string>OpenClaw Node shows notifications from the agent.</string>
+	<key>OpenClawBuildTimestamp</key>
+	<string>__BUILD_TIMESTAMP__</string>
+	<key>OpenClawGitCommit</key>
+	<string>__GIT_COMMIT__</string>
+</dict>
+</plist>

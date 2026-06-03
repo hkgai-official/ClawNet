@@ -1,0 +1,15 @@
+{
+  "_comment": "User ID -> OpenClaw Gateway mapping (example). In production this is loaded from the database; this file is only a template. Replace the placeholder tokens below.",
+  "users": {
+    "10000000-0000-0000-0000-000000000001": {
+      "name": "user1@example.com",
+      "ws_url": "ws://host.docker.internal:18891",
+      "token": "REPLACE_WITH_GATEWAY_TOKEN_1"
+    },
+    "10000000-0000-0000-0000-000000000002": {
+      "name": "user2@example.com",
+      "ws_url": "ws://host.docker.internal:18893",
+      "token": "REPLACE_WITH_GATEWAY_TOKEN_2"
+    }
+  }
+}
